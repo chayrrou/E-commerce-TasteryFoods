@@ -3,18 +3,27 @@ img {
     height: 60px;
 }
 
-.NameLogo {
+.logo {
     font-size: 150%;
     align-items: flex-start;
+    display: flex;
+    align-items: center;
     /* font-style: italic; */
     /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
     
 }
 
+.nameLogo{
+    font-family: 'Nunito';
+    font-weight: bold;
+    color:black;
+    font-size: 30px;
+}
 a{
     text-decoration: none;
     font-size: 80%;
     white-space: normal;
+    color: black;
 }
 a:hover{
     color: whitesmoke;
