@@ -1,0 +1,45 @@
+h3{
+    font-family: 'Nunito';
+    font-size: 20px;
+    width: 21%;
+    text-align: center;
+    border: 5px solid red;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+}
+
+strong{
+    font-size: 23px;
+}
+
+img{
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+.grid-wrapper {
+    columns: 3 250px;
+    gap: 15px;
+}
+.description {
+    width: 350px;
+    height: 220px;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+ h2 {
+    text-align: center;
+    font-family: 'Nunito';
+    font-size: 30px;
+    color: red;
+}
+p {
+    margin: 15px;
+    font-family:'Nunito';
+    line-height: 1.5;
+    font-size: 18px;
+    text-align: center;
+}
+

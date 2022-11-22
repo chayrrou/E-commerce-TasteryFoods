@@ -4,10 +4,12 @@ img {
 }
 
 .logo {
-    font-size: 150%;
+    font-size: 120%;
     align-items: flex-start;
     display: flex;
     align-items: center;
+    font-family:  'Nunito';
+    font-weight: bold;
     /* font-style: italic; */
     /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
     
@@ -26,8 +28,9 @@ a{
     color: black;
 }
 a:hover{
-    color: whitesmoke;
-
+    color: black;
+    border-radius: 20px;
+    background-color:aliceblue;
 }
 
 .spacer {
