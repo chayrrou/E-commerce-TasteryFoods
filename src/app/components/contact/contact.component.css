@@ -1,0 +1,13 @@
+h3{
+    font-family: 'Nunito';
+    font-size: 20px;
+    width: 21%;
+    padding-left: 10px;
+    border: 5px solid red;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+}
+strong{
+    font-size: 23px;
+}

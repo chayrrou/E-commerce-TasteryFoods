@@ -1,1 +1,17 @@
-<p>contact works!</p>
+<section class="container">
+    <div class="d-flex justify-content-center m-4">
+        <h3><strong>CONATCT </strong>US</h3>
+    </div>
+    <div></div>
+    <form [formGroup]="contactForm">
+        <label>First Name</label>
+        <input type="text" formControlName="firstName">
+        <label>Last Name</label>
+        <input type="text" formControlName="lastName"><br>
+        <label>Email</label>
+        <input type="email" formControlName="email"><br>
+        <label>What can we help you with?</label>
+        <input type="text" formControlName="help"><br>
+        <button>Submit</button>
+    </form>
+</section>

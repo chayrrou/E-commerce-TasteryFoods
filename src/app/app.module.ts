@@ -15,6 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NotFound404Component } from './components/not-found404/not-found404.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/login/login.component'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { LoginComponent } from './components/login/login.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
