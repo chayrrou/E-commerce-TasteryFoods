@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { Food } from 'src/app/model/food';
+import { FoodService } from 'src/app/service/food.service';
 
 @Component({
   selector: 'app-menu',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor() { }
+  lesFoods !: Food[]; 
+  
+  constructor(private foodService : FoodService) { }
 
   ngOnInit(): void {
+    this.foodService.getFoods().subscribe(
+      value => this.lesFoods = value
+    )
   }
 
 }

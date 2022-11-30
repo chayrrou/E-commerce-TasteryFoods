@@ -1,1 +1,8 @@
-<p>menu works!</p>
+<app-search></app-search>
+<div class="container p-2">
+
+    <div class="row">
+        <app-menu-card *ngFor="let f of lesFoods" [food]="f" class="col-3 p-3"></app-menu-card>
+    </div>
+</div>
+

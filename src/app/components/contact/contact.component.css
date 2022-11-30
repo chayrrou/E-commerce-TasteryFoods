@@ -11,3 +11,109 @@ h3{
 strong{
     font-size: 23px;
 }
+.contact-box{
+    width: 80%;
+    height: 460px;
+    display: flex;
+    background-color:  #dc3545;
+    color: white;
+    border-radius: 40px;
+
+}
+.contact-left{
+    flex-basis: 55%;
+    padding: 40px 50px;
+}
+.conatct-right{
+    flex-basis: 40%;
+    padding: 40px;
+    padding-top: 10px;
+    background :  #fff;
+    color: black;
+    border-radius: 40px;
+
+}
+.conatct-right h1{
+    margin-bottom: 10px;
+}
+.contact-form-txt{
+    width: 100%;
+    height: 40px;
+    color: #000;
+    border: 1px solid #bcbcbc;
+    border-radius: 50px;
+    outline:none;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+.contact-form-txt::placeholder{
+    color: #aaa;
+}
+.contact-form-txtarea{
+    width: 100%;
+    height: 130px;
+    color: #000;
+    border: 1px solid #bcbcbc;
+    border-radius: 20px;
+    outline:none;
+    margin-bottom: 20px;
+    padding: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+.contact-form-txtarea::placeholder{
+    color: #aaa;
+}
+label{
+    font-family: 'Nunito';
+    font-size: 15px;
+}
+
+button{
+   width: 150px;
+}
+iframe{
+    border-radius: 15px;
+}
+.contact-box .contact-left h2{
+    color: #fff;
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Nunito';
+}
+.contact-box .contact-left ul .info{
+    position: relative;
+    max-width: 20px 0;
+}
+.contact-box .contact-left ul li{
+    position: relative;
+    list-style: none;
+    display: flex;
+    margin:20px 0;
+    cursor: pointer;
+    align-items: flex-start;
+  
+  
+}
+.contact-box .contact-left ul li span i{
+    min-width: 60px;
+    height: 60px;
+    margin-right: 10px;
+    font-size: 22px;
+}
+input.ng-valid{ border-left: 3px solid #ffc107;}
+input.ng-invalid{ border-left: 3px solid #dc3545;}
+textarea.ng-valid{ border-left: 3px solid #ffc107;}
+textarea.ng-invalid{ border-left: 3px solid #dc3545;}
+.input-container{
+    position: relative;
+
+}
+.erreur{
+    position: absolute;
+    color: tomato;
+    bottom: 2px;
+    font-size:smaller;
+    left: 16px;
+
+}
+

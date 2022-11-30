@@ -1,0 +1,49 @@
+h3{
+    font-family: 'Nunito';
+    font-size: 30px;
+    width: 21%;
+    height: 30px;
+    padding-left: 20px;
+    border: 5px solid red;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+}
+.box{
+    width: 40%;
+    height: 410px;
+    display: flex;
+    background-color:  #dc3545;
+    color: white;
+    border-radius: 40px;
+}
+.login-left{
+    /* flex-basis: 55%; */
+    padding: 10px 50px;
+}
+
+.login-form-txt{
+    width: 100%;
+    height: 40px;
+    color: #000;
+    border: 1px solid #bcbcbc;
+    border-radius: 50px;
+    outline:none;
+    margin-bottom: 20px;
+    padding: 15px;
+}
+.login-form-txt::placeholder{
+    color: #aaa;
+}
+label{
+    font-family: 'Nunito';
+    font-size: 15px;
+}
+button{
+    width: 150px;
+ }
+ .form {
+    border-radius: 50px;
+}
+input.ng-valid{ border-left: 3px solid #ffc107;}
+input.ng-invalid{ border-left: 3px solid #dc3545;}

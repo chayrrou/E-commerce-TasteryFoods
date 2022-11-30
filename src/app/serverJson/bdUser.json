@@ -1,0 +1,12 @@
+{
+    "users": [
+      {
+        "id": 1,
+        "email": "chayrrou.mariem@gmail.com",
+        "password" : "mariem-2001",
+        "firstName": "mariem",
+        "lastName": "chayrrou",
+        "role": "admin"
+      }
+    ]
+  }
