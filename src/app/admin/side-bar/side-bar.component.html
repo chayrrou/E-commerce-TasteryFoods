@@ -1,0 +1,24 @@
+<mat-toolbar style="background-color:red;">
+    <mat-toolbar-row>
+        <h1 class="badge text-bg-light rounded-pill">Dashboard</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side" style="width: 100%">
+        
+            <mat-nav-list>
+                <a routerLink="product"  mat-list-item ><span>Product</span></a>
+                <a routerLink="command" mat-list-item><span>Command</span></a>
+                <a routerLink="setting" mat-list-item> <span>Setting</span></a>
+                <div>
+                    <a class="btn btn-warning rounded-pill " mat-list-item><span>Logout</span></a>
+                </div>
+            </mat-nav-list>
+        
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 100vh;">
+            <!-- <router-outlet></router-outlet> -->
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

@@ -26,8 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
 import { MenuCardComponent } from './components/menu-card/menu-card.component';
 import { CardFoodComponent } from './components/card-food/card-food.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { SideBarComponent } from './components/dashboard/side-bar/side-bar.component';
+import { AdminModule } from './admin/admin.module';
+import { BuyFoodComponent } from './components/buy-food/buy-food.component';
 
 @NgModule({
   declarations: [
@@ -42,12 +42,12 @@ import { SideBarComponent } from './components/dashboard/side-bar/side-bar.compo
     SearchComponent,
     MenuCardComponent,
     CardFoodComponent,
-    DashboardComponent,
-    SideBarComponent,
+    BuyFoodComponent
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    AdminModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
@@ -60,6 +60,7 @@ import { SideBarComponent } from './components/dashboard/side-bar/side-bar.compo
     MatTableModule,
     MatInputModule,
     HttpClientModule
+    
     
 
   ],

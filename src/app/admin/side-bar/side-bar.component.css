@@ -2,8 +2,14 @@
 h1{
     font-weight: bold;
     font-family: 'Nunito';
-    font-size: 1.2em;
+    font-size: 1.5rem;
 }
 a{
     font-family: 'Nunito';
+    
+   
+}
+span{
+    width: 600px;
+    text-align: center;
 }

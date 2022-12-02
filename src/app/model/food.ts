@@ -6,7 +6,6 @@ export class Food {
         public ingredients: String,
         public image :String,
         public price : number,
-        public disponible : boolean,
         // public comments ?: Commentaire[]
     ){}
 }

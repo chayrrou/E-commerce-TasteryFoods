@@ -1,0 +1,21 @@
+img{
+    width: 60px;
+    height: 60px;
+    border-radius: 40%;
+}
+table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 10%;
+  }
+  .container{
+    max-width: 1150px;
+    /* margin-top: 40px; */
+  }

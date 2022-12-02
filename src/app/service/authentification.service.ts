@@ -14,4 +14,8 @@ export class AuthentificationService {
   getUsers():Observable<User[]>{
     return this.http.get<User[]>(URL);
   }
+
+  addUsers(u : User):Observable<User>{
+    return this.http.post<User>(URL,u);
+  }
 }

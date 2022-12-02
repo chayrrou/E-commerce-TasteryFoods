@@ -9,7 +9,18 @@
             "price" : 10,
             "disponible":true
            
+        },
+        {
+            "id":1,
+            "type": "Plat",
+            "name": "mama",
+            "ingredients": "Tomate, Mozzarella, Basilic and Huile d'olive",
+            "image": "https://images.pexels.com/photos/14391214/pexels-photo-14391214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            "price" : 10,
+            "disponible":true
+           
         }
+
 
 
 

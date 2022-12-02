@@ -106,7 +106,6 @@ textarea.ng-valid{ border-left: 3px solid #ffc107;}
 textarea.ng-invalid{ border-left: 3px solid #dc3545;}
 .input-container{
     position: relative;
-
 }
 .erreur{
     position: absolute;

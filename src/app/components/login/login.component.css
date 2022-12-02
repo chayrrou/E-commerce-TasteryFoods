@@ -47,3 +47,15 @@ button{
 }
 input.ng-valid{ border-left: 3px solid #ffc107;}
 input.ng-invalid{ border-left: 3px solid #dc3545;}
+.input-container{
+    position: relative;
+
+}
+.erreur{
+    position: absolute;
+    color: tomato;
+    bottom: 2px;
+    font-size:smaller;
+    left: 16px;
+
+}

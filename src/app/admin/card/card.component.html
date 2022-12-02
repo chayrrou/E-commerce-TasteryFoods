@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Add Product</h1>
+<div mat-card-content>
+    <div class="cardForm">
+        <form>
+            <mat-form-field appearance="outline">
+                <mat-label>Name Product</mat-label>
+                <input matInput placeholder="Placeholder">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Type Product</mat-label>
+                <!-- <mat-select>
+                    <mat-option value="option">Option</mat-option>
+                </mat-select> -->
+                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+            </mat-form-field>
+               
+                <mat-dialog-actions align="end" class="d-flex justify-content-around">
+                    <button  mat-dialog-close class="btn btn-warning rounded-pill">Cancel</button>
+                    <button  [mat-dialog-close]="true" cdkFocusInitial class="btn btn-danger rounded-pill ">Add Food</button>
+                </mat-dialog-actions>
+        </form>
+    </div>
+</div>

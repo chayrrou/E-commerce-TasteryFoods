@@ -17,36 +17,51 @@
                     <mat-card-content>
                         <mat-tab-group>
                             <mat-tab label="Login"> 
-                                <form [formGroup]="userForm">
+                                <form [formGroup]="loginForm" (ngSubmit)="loginUsers()">
                                     <div class="input-container">
                                         <label>Mail</label>
                                         <input  class="login-form-txt" placeholder="Your Mail" formControlName="email">
+                                        <div *ngIf="email && email.invalid && email.dirty"class="erreur">
+                                            *Email is a required field
+                                        </div>
                                     </div>
                                     <div class="input-container">
                                         <label>Password</label>
-                                        <input  class="login-form-txt" placeholder="Your Password" formControlName="password">
+                                        <input  class="login-form-txt" placeholder="Your Password" formControlName="password" type="passowrd">
+                                        <div *ngIf="password && password.invalid && password.dirty"class="erreur">
+                                            *Password isn't correct
+                                        </div>
                                     </div>
                                     <div class="justify-content-center align-items-center d-flex">
-                                        <button class="btn btn-warning rounded-pill" [disabled]="userForm.invalid">Login</button>
+                                        <button class="btn btn-warning rounded-pill" [disabled]="loginForm.invalid">Login</button>
                                     </div> 
                                 </form>
                             </mat-tab>
                             <mat-tab label="SignIn"> 
-                                <form [formGroup]="userForm">
+                                <form [formGroup]="signinForm" (ngSubmit)="addUser()">
                                     <div class="input-container">
                                         <label>Name</label>
                                         <input  class="login-form-txt" placeholder="Your Full Name" formControlName="name">
+                                        <div *ngIf="name && name.invalid && name.dirty" class="erreur">
+                                            *Name must start with capital case
+                                        </div>
                                     </div>
                                     <div class="input-container">
                                         <label>Email</label>
                                         <input  class="login-form-txt" placeholder="Your Email" formControlName="email">
+                                        <div *ngIf="email && email.invalid && email.dirty"class="erreur">
+                                            *Email format "foulen.foulen@gmail.com"
+                                        </div>
                                     </div>
                                     <div class="input-container">
                                         <label>Password</label>
                                         <input  class="login-form-txt" placeholder="Your Password" formControlName="password">
+                                        <div *ngIf="password && password.invalid && password.dirty"class="erreur">
+                                            *Password is content 8 caractere
+                                        </div>
                                     </div>
                                     <div class="justify-content-center align-items-center d-flex">
-                                        <button class="btn btn-warning rounded-pill" [disabled]="userForm.invalid">Login</button>
+                                        <button class="btn btn-warning rounded-pill" [disabled]="loginForm.invalid">SignIn</button>
                                     </div> 
                                 </form>
                             </mat-tab>

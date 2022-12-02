@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { BuyFoodComponent } from './components/buy-food/buy-food.component';
 import { CardFoodComponent } from './components/card-food/card-food.component';
 import { ContactComponent } from './components/contact/contact.component';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -15,8 +15,8 @@ const routes: Routes = [
   {path:'aboutUs',title:'AboutUs', component:AboutUsComponent},
   {path:'contact',title:'Contact', component:ContactComponent},
   {path:'login', title:'Login',component:LoginComponent},
-  {path:'dashboard', title:'Dashboard', component:DashboardComponent},
-  {path:'menu/:id', title:'CardFood', component:CardFoodComponent}
+  {path:'menu/:id', title:'CardFood', component:CardFoodComponent},
+  {path:'buyFood', title:'buyFood', component:BuyFoodComponent}
 ];
 
 @NgModule({
