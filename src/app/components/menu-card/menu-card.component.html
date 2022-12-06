@@ -4,15 +4,13 @@
       <mat-card-subtitle class="subtitle">{{food.ingredients}}</mat-card-subtitle>
     </mat-card-header>
     <a [routerLink]="['/menu', food.id]">
-      <img mat-card-image src={{food.image}} alt="Photo of a Shiba Inu">
+      <img mat-card-image src={{food.image}} alt="Photo food">
     </a>
     <mat-card-actions class="d-flex justify-content-center align-items-center">
       <div class="justify-content-start badge text-bg-danger rounded-pill" style="width: 50%;text-align: center; color: aliceblue;font-size: 15px;">{{food.price}} TND</div>
-          <!-- <span class="favorite">
-             ❤
-          </span> -->
     </mat-card-actions>
   </mat-card>
+ 
   
   
  

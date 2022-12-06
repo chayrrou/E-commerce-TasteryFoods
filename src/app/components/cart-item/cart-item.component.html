@@ -1,6 +1,4 @@
 <app-header></app-header>
-<ng-container>
-    <div class="card-product">
         <div class="container">
             <ul>
                 <li *ngFor="let item of cartList" >
@@ -8,11 +6,11 @@
                         <img [src]="item.image">
                     </div>
                     <div>
-                        <a >
+                        <a style="font-size:20px ;" >
                            {{item.name}}
                         </a>
                     </div>
-                    <div>{{item.price}} TND</div>
+                    <div style="font-size:20px ;">{{item.price}} TND</div>
                     <button class="btn btn-danger rounded-pill" (click)="removeCartItem(item.id)">
                         Remove
                     </button>
@@ -29,5 +27,4 @@
             </div>
         
         </div>
-    </div>
-</ng-container>
+        <!-- <app-footer></app-footer> -->

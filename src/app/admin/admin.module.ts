@@ -23,6 +23,7 @@ import { CardComponent } from './card/card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SettingComponent } from './setting/setting.component';
 import { UsersComponent } from './users/users.component';
+import { FooterDashboardComponent } from './footer-dashboard/footer-dashboard.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { UsersComponent } from './users/users.component';
     SideBarComponent,
     CardComponent,
     SettingComponent,
-    UsersComponent
+    UsersComponent,
+    FooterDashboardComponent
   ],
   imports: [
     CommonModule,

@@ -57,17 +57,12 @@ export class LoginComponent implements OnInit {
    )
    this.authentificationService.user = this.signinForm.value;
    this.signinForm.reset();
+   this.router.navigate(['home']);
   }
 
   loginUsers(){
     const { email, password } = this.loginForm.value;
     const [user] = this.lesUsers.filter((user) => user.email === email && user.password === password) // returns array of filtered users
-
-    // if (user && user.role === "admin" ) { // check if user is not undefined and check user.role === "admin"
-    //   this.authentificationService.user = user; // better not store all user object inside user because of password could be stolen
-    //   this.router.navigate(['admin']);
-    // }
-
     if (user) {
       this.authentificationService.user = user; // better not store all user because password can be stolen.
       if (user.role === "admin") {

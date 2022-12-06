@@ -10,6 +10,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { NotFound404Component } from './components/not-found404/not-found404.component';
 
 const routes: Routes = [
+  {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'home',title:'Home', component:HomeComponent},
   {path:'menu',title:'Menu', component:MenuComponent},
   {path:'aboutUs',title:'AboutUs', component:AboutUsComponent},
@@ -17,8 +18,7 @@ const routes: Routes = [
   {path:'login', title:'Login',component:LoginComponent},
   {path:'menu/:id', title:'CardFood', component:CardFoodComponent},
   {path:'cartItem', title:'CartItem', component:CartItemComponent},
-  {path:'**', title:'notFound404', component:NotFound404Component},
-  {path:'',title:'Home', component:HomeComponent}
+  {path:'**', title:'notFound404', component:NotFound404Component}
 ];
 
 @NgModule({

@@ -6,6 +6,7 @@ import { SettingComponent } from './setting/setting.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { UsersComponent } from './users/users.component';
 import { AuthPageAdminGuard } from '../auth-page-admin.guard';
+import { FooterDashboardComponent } from './footer-dashboard/footer-dashboard.component';
 
 const routes: Routes = [
   {path:'admin', component:DashboardComponent,
@@ -15,7 +16,8 @@ const routes: Routes = [
       {path:'sideBar', component:SideBarComponent},
       {path:'product', component:ProductComponent},
       {path:'setting', component: SettingComponent},
-      {path:'users', component:UsersComponent }
+      {path:'users', component:UsersComponent },
+      {path:'footerDashoard', component:FooterDashboardComponent}
     ]}
 ];
 

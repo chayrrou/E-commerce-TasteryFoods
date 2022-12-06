@@ -11,25 +11,21 @@ import { AuthentificationService } from 'src/app/service/authentification.servic
 })
 export class SettingComponent implements OnInit {
  
-  lesUsers !: User[];
+  // lesUsers !: User[];
   settingForm!: FormGroup;
   hide: boolean = true;
+  user: User | undefined = this.authentificationService.user
   constructor(private fb : FormBuilder,private authentificationService : AuthentificationService) { }
 
   ngOnInit(): void {
-
+    const user = this.authentificationService.user
     this.settingForm = this.fb.nonNullable.group({
-      name:['',Validators.required],
-      email: ['',Validators.required],
-      password : ['',Validators.required],
-      role: ['']
+      name:[user?.name, Validators.required],
+      email: [user?.email, Validators.required],
+      password : [user?.password, Validators.required],
+      role: [user?.role]
     })
 
-    this.authentificationService.getUsers().subscribe(
-      (value) =>{ 
-        this.lesUsers = value;
-      }
-    )
   }
 
 
@@ -43,11 +39,13 @@ export class SettingComponent implements OnInit {
     return this.settingForm.get('password');
   }
 
-  onUpdate(){
-    this.authentificationService.updateUser(this.settingForm.value).subscribe(
-      value => { 
+  onUpdate() {
+    if(this.user) {
+      this.authentificationService.updateUser(this.user.id, this.settingForm.value).subscribe(value => {
+        alert("update is Successful!");
       })
-
+      
+    }
   }
  
 
