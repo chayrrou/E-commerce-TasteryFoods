@@ -13,9 +13,11 @@ export class LoginComponent implements OnInit {
   signinForm !: FormGroup;
   loginForm !: FormGroup;
   lesUsers !: User[];
+
   constructor(private fb : FormBuilder, private authentificationService:AuthentificationService, private router: Router) { }
 
   ngOnInit(): void {
+    if (this.authentificationService.user) this.router.navigate(['home'])
     this.signinForm = this.fb.nonNullable.group({
       email:['',[Validators.required, Validators.pattern('^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}$')]],
       password : ['',Validators.required],
@@ -24,7 +26,7 @@ export class LoginComponent implements OnInit {
     })
     this.loginForm = this.fb.nonNullable.group({
       email:['',[Validators.required, Validators.pattern('^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}$')]],
-      password : ['',Validators.required]
+      password : ['',[Validators.required,Validators.maxLength(8)]]
     })
     
     this.authentificationService.getUsers().subscribe(
@@ -35,29 +37,44 @@ export class LoginComponent implements OnInit {
   public get email(){
     return this.signinForm.get('email');
   }
-
   public get name(){
     return this.signinForm.get('name');
   }
-
   public get password(){
     return this.signinForm.get('password');
   }
+  public get emaillogin(){
+    return this.loginForm.get('email');
+  }
+  public get passwordlogin(){
+    return this.loginForm.get('password');
+  }
+
 
   addUser(){
    this.authentificationService.addUsers(this.signinForm.value).subscribe(
       value => this.lesUsers.push(value)
    )
+   this.authentificationService.user = this.signinForm.value;
    this.signinForm.reset();
   }
 
   loginUsers(){
-    // alert("c'est bon");
     const { email, password } = this.loginForm.value;
-    const user = this.lesUsers.filter((user) => user.email === email && user.password === password)
+    const [user] = this.lesUsers.filter((user) => user.email === email && user.password === password) // returns array of filtered users
 
-    if (user?.length && user[0].role === "admin" ) {
-      this.router.navigate(['admin']);
+    // if (user && user.role === "admin" ) { // check if user is not undefined and check user.role === "admin"
+    //   this.authentificationService.user = user; // better not store all user object inside user because of password could be stolen
+    //   this.router.navigate(['admin']);
+    // }
+
+    if (user) {
+      this.authentificationService.user = user; // better not store all user because password can be stolen.
+      if (user.role === "admin") {
+        this.router.navigate(['admin'])
+      } else {
+        this.router.navigate(['home'])
+      }
     }
     
     this.loginForm.reset();

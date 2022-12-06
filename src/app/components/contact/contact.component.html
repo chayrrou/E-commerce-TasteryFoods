@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class="container">
     <div class="d-flex justify-content-center m-4">
         <h3><strong>CONATCT </strong>US</h3>
@@ -30,7 +31,7 @@
                 </iframe>
             </div>
             <div class="conatct-right">
-                    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                    <form  [formGroup]="contactForm" >
 
                              <div class="input-container">
                                 <label>First Name</label>
@@ -69,7 +70,7 @@
 
 
                             <div class="justify-content-center align-items-center d-flex">
-                                <button class="btn btn-warning rounded-pill" [disabled]="contactForm.invalid">Send Message</button>
+                                <button class="btn btn-warning rounded-pill" [disabled]="contactForm.invalid" (click)="onSubmit()">Send Message</button>
                             </div> 
                     </form>
             </div>

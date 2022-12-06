@@ -18,4 +18,13 @@ export class FoodService {
     const res = this.http.get(`${URL}/${id}`);
     return res
   }
+  addFoods(f:Food):Observable<Food>{
+    return this.http.post<Food>(URL, f);
+  }
+  updateFoods(id:number,f:Food){
+    return this.http.put<Food>(URL+"/"+id ,f)
+  }
+  deleteFoods(id : number){
+    return this.http.delete(`${URL}/${id}`);
+  }
 }

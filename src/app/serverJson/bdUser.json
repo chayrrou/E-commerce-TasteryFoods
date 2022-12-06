@@ -1,19 +1,39 @@
 {
   "users": [
     {
-      "id": 1,
-      "email": "chayrrou.mariem@gmail.com",
-      "password": "mariem-2001",
-      "firstName": "mariem",
-      "lastName": "chayrrou",
-      "role": "user"
-    },
-    {
       "email": "admin@gmail.com",
       "password": "test",
       "name": "admin",
       "role": "admin",
+      "id": 1
+    },
+    {
+      "email": "tabouch@gmail.fr",
+      "password": "tabouch",
+      "name": "hello",
+      "role": "client",
       "id": 2
+    },
+    {
+      "email": "tabouch@gmail.com",
+      "password": "tab",
+      "name": "Mariem",
+      "role": "client",
+      "id": 3
+    },
+    {
+      "email": "yas@yahoo.com",
+      "password": "yas",
+      "name": "Yassine",
+      "role": "admin",
+      "id": 4
+    },
+    {
+      "email": "Chayrrou@gmail.com",
+      "password": "test",
+      "name": "Mariem",
+      "role": "",
+      "id": 5
     }
   ]
 }

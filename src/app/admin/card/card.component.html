@@ -1,24 +1,41 @@
-<h1 mat-dialog-title>Add Product</h1>
+<h1 mat-dialog-title class="d-flex justify-content-center m-4">Add Product</h1>
 <div mat-card-content>
     <div class="cardForm">
-        <form>
+        <form [formGroup]="cardForm">
+            <!-- <mat-form-field appearance="outline">
+                <mat-label>Image</mat-label>
+                <input  placeholder="Image" type="file">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field> -->
+
             <mat-form-field appearance="outline">
                 <mat-label>Name Product</mat-label>
-                <input matInput placeholder="Placeholder">
+                <input matInput placeholder="Name Product"  formControlName="name">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
 
-            <mat-form-field appearance="fill">
+            <mat-form-field appearance="outline">
                 <mat-label>Type Product</mat-label>
-                <!-- <mat-select>
-                    <mat-option value="option">Option</mat-option>
-                </mat-select> -->
-                <mat-hint align="end">Here's the dropdown arrow ^</mat-hint>
+                <mat-select placeholder="Type"  formControlName="type">
+                    <mat-option value={{t}} *ngFor="let t of lesTypes">{{t}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Ingredients</mat-label>
+                <input matInput placeholder="Ingredients"  formControlName="ingredients">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+                <mat-label>Price</mat-label>
+                <input matInput placeholder="Price"  formControlName="price">
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
                
                 <mat-dialog-actions align="end" class="d-flex justify-content-around">
                     <button  mat-dialog-close class="btn btn-warning rounded-pill">Cancel</button>
-                    <button  [mat-dialog-close]="true" cdkFocusInitial class="btn btn-danger rounded-pill ">Add Food</button>
+                    <button  [mat-dialog-close]="true" cdkFocusInitial class="btn btn-danger rounded-pill" (click)="actionBtn === 'Update' ? updateProduct() : onAddProduct()">{{actionBtn}}</button>
                 </mat-dialog-actions>
         </form>
     </div>

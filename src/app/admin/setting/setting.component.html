@@ -1,0 +1,57 @@
+<nav class="navbar justify-content-end" style="background-color:tomato;height: 64px;">
+  <div class="mx-5" style="font-size: 20px;">
+      <i class="bi bi-person-circle"></i>
+  </div>
+</nav>
+<div class="conatiner">
+    <div class="d-flex justify-content-center m-4">
+        <h1>Public Profil & Account Setting</h1>
+    </div>    
+    <div class="box m-4 justify-content-center">
+        <!-- <div class="otherBox" ></div> -->
+            <div class="profil d-flex justify-content-start align-items-center mb-5">
+              <mat-card class="card">
+                <mat-card-header>
+                  <mat-card-title class="name">Shiba Inu</mat-card-title>
+                </mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-actions class="d-flex justify-content-center align-items-center">
+                  <button mat-raised-button color="warn" class="button">Update New Photo</button>
+                </mat-card-actions>
+              </mat-card>
+              <div class="form">
+                <mat-card class="form p-5 m-6" style="width: 500px; border-radius: 20px;">
+                  <mat-card-header>
+                    <mat-card-title>Public Profil</mat-card-title>
+                    <mat-card-subtitle>Info</mat-card-subtitle>
+                  </mat-card-header>
+                 
+                  <mat-card-content>
+                              <form [formGroup]="settingForm" (ngSubmit)="onUpdate()">
+                                  <div>
+                                      <label>Full Name</label>
+                                      <input  class="setting-form-txt" placeholder="Your Name" formControlName="name">
+                                  </div>
+                                  <div>
+                                      <label>Mail</label>
+                                      <input  class="setting-form-txt" placeholder="Your Mail" formControlName="email" >
+                                  </div>
+                                  <div class="input-container">
+                                      <label>Password</label>
+                                      <input [type]="hide ? 'password' : 'text'"  class="setting-form-txt" placeholder="Your Password" formControlName="password" >
+                                      <span class="eyeIcon" (click)="hide = !hide">
+                                        <i [ngClass]="hide?'bi bi-eye-slash-fill':'bi bi-eye-fill'"></i>
+                                      </span>
+                                  </div>
+                                  <mat-card-actions class="d-flex justify-content-center align-items-center">
+                                    <button mat-raised-button color="warn" class="button" [disabled]="settingForm.invalid">Update Info Profil</button>
+                                  </mat-card-actions>
+                              </form>
+                  </mat-card-content>
+                  
+              </mat-card>
+              
+            </div>  
+        </div>
+    </div>
+</div>

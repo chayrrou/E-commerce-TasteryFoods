@@ -1,6 +1,6 @@
 <!-- first step creation header -->
 <header >
-    <mat-toolbar color="">
+    <mat-toolbar >
         <span  class="logo">
             <img src="../../../assets/logo/chef4.png" alt="chef">
             <span class="nameLogo" class="text-danger">Tastery</span>
@@ -10,6 +10,11 @@
             <a mat-button routerLink="/menu">Menu</a>
             <a mat-button routerLink="/aboutUs">About us</a>
             <a mat-button routerLink="/contact">Contact</a>
-            <button  mat-raised-button color="warn" routerLink="/login">Login</button>
+            <a mat-button routerLink="/cartItem">
+                <i style="font-size:25px;" class="bi bi-basket"></i>
+                <div style="font-size:10px;" class="badge text-bg-primary rounded-pill translate-middle">{{badge}}</div>
+            </a>
+            <button *ngIf="!isConnected" mat-raised-button color="warn" routerLink="/login">login</button>
+            <button *ngIf="isConnected" mat-raised-button color="warn" (click)="logout()">logout</button>
     </mat-toolbar>
 </header>

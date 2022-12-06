@@ -20,7 +20,7 @@ export class ContactComponent implements OnInit {
         firstName:['', [Validators.required, Validators.pattern('^[A-Z][a-zA-Z]+$')]],
         lastName: ['',[Validators.required, Validators.pattern('^[A-Z][a-zA-Z]+$')]],
         email: ['',[Validators.required, Validators.pattern('^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}$')]],
-        help : ['',[Validators.required, Validators.pattern('^[A-Z][a-zA-Z]+$')]]
+        help : ['',Validators.required]
       })
 
       this.contactService.getContacts().subscribe(

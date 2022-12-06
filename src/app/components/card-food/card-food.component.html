@@ -1,3 +1,4 @@
+<app-header></app-header>
 <div class=" container p-5 ">
     <div class="d-flex justify-content-around">
         <div class="align-items-start">
@@ -27,12 +28,13 @@
                 <p>{{foodDetails?.ingredients}}</p>
             </div>
             <div class="price">
-                <p>Price <span class="badge rounded-pill-2 text-bg-success">{{foodDetails?.price}} DT</span></p> 
+                <p>Price <span class="badge rounded-pill-2 text-bg-success">{{foodDetails?.price}} TND</span></p> 
             </div>     
             <div class="spacer">
-                <button mat-raised-button color="warn" [routerLink]="['/buyFood']">Buy Now </button>
-                <button mat-raised-button color="warn">Add Card</button>
+                <button mat-raised-button color="warn" (click)="addCartItem()" [disabled]="isDisabled">Add Card</button>
+                <button mat-raised-button color="primary"  routerLink="/menu"> Back</button>
             </div>
         </div> 
     </div>
 </div>
+<app-footer></app-footer>

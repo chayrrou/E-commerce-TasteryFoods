@@ -11,13 +11,27 @@ import { FoodService } from 'src/app/service/food.service';
 export class MenuComponent implements OnInit {
 
   lesFoods !: Food[]; 
+  foodsBackup !: Food[];
   
   constructor(private foodService : FoodService) { }
 
   ngOnInit(): void {
     this.foodService.getFoods().subscribe(
-      value => this.lesFoods = value
+      value => {
+        this.lesFoods = value 
+        this.foodsBackup = value
+      }
     )
   }
+  onSearch(textInput: string) {
+    if (textInput === "") {
+      this.lesFoods = this.foodsBackup
+    } else {
+    this.lesFoods = this.lesFoods.filter(food => {
+      const foodCode = `${food.name} ${food.type} ${food.price}`.toLocaleLowerCase()
+      const result = foodCode.match(textInput.toLowerCase());
+      return result?.length;
+    })
+  }}
 
 }

@@ -1,0 +1,91 @@
+h1{
+    font-family: 'Nunito';
+    font-size: 30px;
+    width: 40%;
+    padding-left: 15px;
+    border: 5px solid red;
+    border-top: 0px;
+    border-bottom: 0px;
+    border-right: 0px;
+    text-align: center;
+}
+.box{
+  width: 92%;
+  height: 500px;
+  display: flex;
+  color: white;
+  border-radius: 40px;
+}
+
+.profil{
+  flex-basis: 80%;
+  padding: 40px;
+  padding-top: 50px;
+  color: black;
+  border-radius: 40px;
+  background-color:tomato;
+}
+.card{
+    bottom: 110px;
+    border-radius: 20px;
+    max-width: 250px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size:cover;
+  width: 100px;
+  height: 100px;
+  margin: 0px auto;
+}
+.card .name{
+  width: 190px;
+  text-align: center;
+}
+.button {
+  width: 70%;
+  border-radius: 20px;
+}
+.formProfil{
+  max-width: 500px;
+}
+
+.setting-form-txt{
+  width: 100%;
+  height: 40px;
+  color: #000;
+  border: 1px solid #bcbcbc;
+  border-radius: 50px;
+  outline:none;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+.setting-form-txt::placeholder{
+  color: #aaa;
+}
+label{
+  font-family: 'Nunito';
+  font-size: 15px;
+}
+input.ng-valid{ border-left: 3px solid #ffc107;}
+input.ng-invalid{ border-left: 3px solid #dc3545;}
+textarea.ng-valid{ border-left: 3px solid #ffc107;}
+textarea.ng-invalid{ border-left: 3px solid #dc3545;}
+.form{
+  width: 500px;
+  height: 420px;
+  padding-left: 50px;
+
+}
+/* eye */
+.input-container{
+  position: relative;
+  width: 180px;
+}
+.eyeIcon{
+  position: absolute;
+  right: 15px;
+  bottom: 30px;
+  font-size: 20px;
+}
+

@@ -13,13 +13,16 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort'; 
 import {MatDialogModule} from '@angular/material/dialog'; 
 import {MatFormFieldModule} from '@angular/material/form-field'; 
+import {MatSelectModule} from '@angular/material/select'; 
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProductComponent } from './product/product.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
-import { CommandComponent } from './command/command.component';
 import { CardComponent } from './card/card.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SettingComponent } from './setting/setting.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
@@ -27,8 +30,9 @@ import { CardComponent } from './card/card.component';
     DashboardComponent,
     ProductComponent,
     SideBarComponent,
-    CommandComponent,
-    CardComponent
+    CardComponent,
+    SettingComponent,
+    UsersComponent
   ],
   imports: [
     CommonModule,
@@ -45,7 +49,10 @@ import { CardComponent } from './card/card.component';
     MatPaginatorModule,
     MatSortModule,
     MatDialogModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatSelectModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class AdminModule { }

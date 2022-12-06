@@ -1,0 +1,80 @@
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 1.5rem;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    flex: 3 0;
+    border: 1px solid tomato;
+    border-radius: 1rem;
+    list-style-type: none;
+    margin: .5rem;
+    padding: 0;
+}
+
+ul li{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #e4e4e4;
+}
+ul li img{
+    width: 6rem;
+    height: 6rem;
+    border-radius: 10px;
+    object-fit: cover;
+}
+ul li div{
+    padding: 1rem;
+}
+.checkout{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 10rem;
+    border: 1px solid tomato;
+    border-radius: 1rem;
+    padding: .5rem;
+    margin: .5rem;
+}
+.checkout>div{
+    font-size: 1.4rem;
+    margin: 1rem;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.checkout .foods-count{
+    margin-bottom: 1.5rem;
+}
+
+.checkout .foods-count::before{
+    content: 'Count: ';
+    color: grey;
+}
+
+.checkout .total-price-dinar::before{
+    content: 'Price in dinar : ';
+    color: grey;
+}
+.checkout .total-price-dollar::before{
+    content: 'Price in dollar : ';
+    color: grey;
+}
+.checkout .total-price-euro::before{
+    content: 'Price in euro : ';
+    color: grey;
+}
+.price{
+    flex-direction: column;
+    line-height: 1.5;
+}

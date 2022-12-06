@@ -1,4 +1,4 @@
-<mat-toolbar style="background-color:red;">
+<mat-toolbar style="background-color:tomato;">
     <mat-toolbar-row>
         <h1 class="badge text-bg-light rounded-pill">Dashboard</h1>
     </mat-toolbar-row>
@@ -8,13 +8,12 @@
         
             <mat-nav-list>
                 <a routerLink="product"  mat-list-item ><span>Product</span></a>
-                <a routerLink="command" mat-list-item><span>Command</span></a>
-                <a routerLink="setting" mat-list-item> <span>Setting</span></a>
+                <a routerLink="setting" mat-list-item> <span>Account Setting</span></a>
+                <a routerLink="users" mat-list-item><span>Users</span></a>
                 <div>
-                    <a class="btn btn-warning rounded-pill " mat-list-item><span>Logout</span></a>
+                    <a class="btn btn-warning rounded-pill " mat-list-item (click)="logout()"><span>Logout</span></a>
                 </div>
-            </mat-nav-list>
-        
+            </mat-nav-list>       
     </mat-sidenav>
     <mat-sidenav-content>
         <div style="height: 100vh;">

@@ -18,4 +18,9 @@ export class AuthentificationService {
   addUsers(u : User):Observable<User>{
     return this.http.post<User>(URL,u);
   }
+  updateUser(u:User){
+    return this.http.put<User>(URL ,u)
+  }
+  role : string = "client";
+  user: User | undefined;
 }

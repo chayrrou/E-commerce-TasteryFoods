@@ -23,11 +23,14 @@ import { LoginComponent } from './components/login/login.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchComponent } from './components/search/search.component';
 import { MenuCardComponent } from './components/menu-card/menu-card.component';
 import { CardFoodComponent } from './components/card-food/card-food.component';
 import { AdminModule } from './admin/admin.module';
-import { BuyFoodComponent } from './components/buy-food/buy-food.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { NotFound404Component } from './components/not-found404/not-found404.component';
+import { AuthPageAdminGuard } from './auth-page-admin.guard';
+import { DollarPipe } from './pipe/dollar.pipe';
+import { EuroPipe } from './pipe/euro.pipe';
 
 @NgModule({
   declarations: [
@@ -39,10 +42,12 @@ import { BuyFoodComponent } from './components/buy-food/buy-food.component';
     MenuComponent,
     LoginComponent,
     ContactComponent,
-    SearchComponent,
     MenuCardComponent,
     CardFoodComponent,
-    BuyFoodComponent
+    CartItemComponent,
+    NotFound404Component,
+    DollarPipe,
+    EuroPipe
   ],
   imports: [
     BrowserModule,
@@ -64,7 +69,7 @@ import { BuyFoodComponent } from './components/buy-food/buy-food.component';
     
 
   ],
-  providers: [],
+  providers: [AuthPageAdminGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

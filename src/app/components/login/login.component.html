@@ -1,4 +1,5 @@
 <!-- <button [routerLink]="['/dashboard']">login</button> -->
+<app-header></app-header>
 <div class="container">
     <div class="d-flex justify-content-center m-5">
         <h3><strong>Login</strong></h3>
@@ -21,15 +22,16 @@
                                     <div class="input-container">
                                         <label>Mail</label>
                                         <input  class="login-form-txt" placeholder="Your Mail" formControlName="email">
-                                        <div *ngIf="email && email.invalid && email.dirty"class="erreur">
+                                        <div *ngIf="emaillogin && emaillogin.invalid && emaillogin.dirty"class="erreur">
                                             *Email is a required field
                                         </div>
                                     </div>
                                     <div class="input-container">
                                         <label>Password</label>
-                                        <input  class="login-form-txt" placeholder="Your Password" formControlName="password" type="passowrd">
-                                        <div *ngIf="password && password.invalid && password.dirty"class="erreur">
-                                            *Password isn't correct
+                                        <input   class="login-form-txt" type="passowrd" placeholder="Your Password" formControlName="password" type="passowrd">
+                                        
+                                        <div *ngIf="passwordlogin && passwordlogin.invalid && passwordlogin.dirty"class="erreur">
+                                            *Password isn't correct (max 8)
                                         </div>
                                     </div>
                                     <div class="justify-content-center align-items-center d-flex">
@@ -37,6 +39,7 @@
                                     </div> 
                                 </form>
                             </mat-tab>
+
                             <mat-tab label="SignIn"> 
                                 <form [formGroup]="signinForm" (ngSubmit)="addUser()">
                                     <div class="input-container">
@@ -61,7 +64,7 @@
                                         </div>
                                     </div>
                                     <div class="justify-content-center align-items-center d-flex">
-                                        <button class="btn btn-warning rounded-pill" [disabled]="loginForm.invalid">SignIn</button>
+                                        <button class="btn btn-warning rounded-pill" [disabled]="signinForm.invalid">SignIn</button>
                                     </div> 
                                 </form>
                             </mat-tab>

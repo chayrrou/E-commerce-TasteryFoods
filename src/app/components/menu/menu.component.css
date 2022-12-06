@@ -1,0 +1,43 @@
+h1{
+    font-size: 45px;
+    font-weight: bold;
+    font-family: 'Nunito';
+    color: #ff5722;
+}
+
+.search{
+    justify-content: center;
+    align-items: center;
+    display:flex;
+    margin-top: 40px;
+    width: 100%;
+    flex-direction: column;
+    /* bottom: 20px; */
+}
+.form {
+    display: flex;
+}
+input{
+    border-radius: 10rem 0 0 10rem;
+    border: none;
+    height: 2.9rem;
+    width: 20rem;
+    color: gray;
+    background-color:whitesmoke;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    font-family: 'Nunito';
+    font-weight: light;
+    outline: none;
+}
+.button{
+    height: 2.9rem;
+    width: 6rem;
+    font-size: 1rem;
+    border-radius: 0 10rem 10rem 0;
+    border: none;
+    outline: none;
+}
+.button:hover{
+    background-color: #ff5722;
+}
