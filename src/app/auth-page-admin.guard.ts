@@ -14,7 +14,7 @@ export class AuthPageAdminGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       let user = this.authentificationService.user;
-      if(user?.role === "admin")
+      if(user?.role === "Admin")
       return true;
       else {
       return false;

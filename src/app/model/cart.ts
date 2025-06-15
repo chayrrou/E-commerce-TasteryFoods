@@ -1,8 +1,9 @@
 export class Cart {
     constructor (
-        public name : String,
-        public email : String,
-        public confirmed : String,
-        public help : String
+        public id: number,
+        public name: string,
+        public image: string,
+        public price: number,
+        public quantity: number = 1
     ) {}
 }

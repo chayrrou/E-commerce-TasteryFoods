@@ -21,7 +21,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { LoginComponent } from './components/login/login.component'; 
 import { ContactComponent } from './components/contact/contact.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuCardComponent } from './components/menu-card/menu-card.component';
 import { CardFoodComponent } from './components/card-food/card-food.component';
@@ -31,6 +31,7 @@ import { NotFound404Component } from './components/not-found404/not-found404.com
 import { AuthPageAdminGuard } from './auth-page-admin.guard';
 import { DollarPipe } from './pipe/dollar.pipe';
 import { EuroPipe } from './pipe/euro.pipe';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { EuroPipe } from './pipe/euro.pipe';
     NotFound404Component,
     DollarPipe,
     EuroPipe
-  ],
+ ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -64,10 +65,8 @@ import { EuroPipe } from './pipe/euro.pipe';
     MatTabsModule,
     MatTableModule,
     MatInputModule,
-    HttpClientModule
-    
-    
-
+    HttpClientModule,
+    FormsModule 
   ],
   providers: [AuthPageAdminGuard],
   bootstrap: [AppComponent]

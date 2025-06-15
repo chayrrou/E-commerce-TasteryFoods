@@ -13,3 +13,86 @@ p{
     font-family: 'Nunito';
 }
 
+/* Responsive */
+
+@media (max-width: 1200px) {
+        h1 {
+            font-size: 60px;
+        }
+        
+        p {
+            font-size: 18px;
+        }
+    }
+
+    @media (max-width: 992px) {
+        h1 {
+            font-size: 50px;
+        }
+        
+        .d-flex.justify-content-between {
+            flex-direction: column;
+            text-align: center;
+            align-items: center !important;
+        }
+        
+        .align-items-start {
+            align-items: center !important;
+        }
+        
+        div[style*="height:300px"] {
+            height: auto !important;
+            padding-bottom: 40px;
+        }
+        
+        div[style*="width: 100%"] {
+            max-width: 100% !important;
+        }
+        
+        p br {
+            display: none;
+        }
+    }
+
+   
+
+
+    /* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-section p {
+        font-size: 1rem;
+    }
+    
+    .chef-card, .testimonial-card {
+        margin-bottom: 20px;
+    }
+    
+    .restaurant-gallery img {
+        margin-bottom: 15px;
+    }
+}
+
+/* Animation for hover effects */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+
+    @media (max-width: 576px) {
+        h1 {
+            font-size: 32px;
+        }
+        
+        .text-danger {
+            font-size: 18px !important;
+        }
+    }
+

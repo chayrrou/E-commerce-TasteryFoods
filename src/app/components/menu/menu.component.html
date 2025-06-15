@@ -5,12 +5,21 @@
         <input type="text" placeholder="search.." #textbox>
         <button class="btn btn-warning button" (click)="onSearch(textbox.value)">Search</button>
     </div>
+    
+    <!-- Nouvelle section catégories -->
+    <div class="categories">
+        <span *ngFor="let category of allCategories" 
+              class="category-badge"
+              [class.active]="activeCategory === category"
+              (click)="filterByCategory(category)">
+            {{category}}
+        </span>
+    </div>
 </div>
+
 <div class="container p-4">
    <div class="row">
-        <app-menu-card *ngFor="let f of lesFoods" [food]="f" class="col-3 p-3"></app-menu-card>
+        <app-menu-card *ngFor="let f of filteredFoods" [food]="f" class="col-12 col-sm-6 col-md-4 col-lg-3 p-3"></app-menu-card>
     </div>
 </div>
 <app-footer></app-footer>
-
-

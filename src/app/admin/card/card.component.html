@@ -1,42 +1,43 @@
-<h1 mat-dialog-title class="d-flex justify-content-center m-4">Add Product</h1>
+<h1 mat-dialog-title class="d-flex justify-content-center m-4">Form Meals</h1>
 <div mat-card-content>
     <div class="cardForm">
         <form [formGroup]="cardForm">
-            <!-- <mat-form-field appearance="outline">
-                <mat-label>Image</mat-label>
-                <input  placeholder="Image" type="file">
-                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-            </mat-form-field> -->
+            <!-- Image Upload Field -->
+            <div class="mb-3">
+                <label for="productImage" class="form-label">Product Image</label>
+                <input class="form-control" type="file" id="productImage" (change)="onFileSelected($event)" accept="image/*">
+                <small class="text-muted">Upload a product image (JPEG, PNG, etc.)</small>
+            </div>
 
             <mat-form-field appearance="outline">
                 <mat-label>Name Product</mat-label>
-                <input matInput placeholder="Name Product"  formControlName="name">
+                <input matInput placeholder="Name Product" formControlName="name">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Type Product</mat-label>
-                <mat-select placeholder="Type"  formControlName="type">
+                <mat-select placeholder="Type" formControlName="type">
                     <mat-option value={{t}} *ngFor="let t of lesTypes">{{t}}</mat-option>
                 </mat-select>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Ingredients</mat-label>
-                <input matInput placeholder="Ingredients"  formControlName="ingredients">
+                <input matInput placeholder="Ingredients" formControlName="ingredients">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Price</mat-label>
-                <input matInput placeholder="Price"  formControlName="price">
+                <input matInput placeholder="Price" formControlName="price">
                 <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             </mat-form-field>
                
-                <mat-dialog-actions align="end" class="d-flex justify-content-around">
-                    <button  mat-dialog-close class="btn btn-warning rounded-pill">Cancel</button>
-                    <button  [mat-dialog-close]="true" cdkFocusInitial class="btn btn-danger rounded-pill" (click)="actionBtn === 'Update' ? updateProduct() : onAddProduct()">{{actionBtn}}</button>
-                </mat-dialog-actions>
+            <mat-dialog-actions align="end" class="d-flex justify-content-around">
+                <button mat-dialog-close class="btn btn-warning rounded-pill">Cancel</button>
+                <button [mat-dialog-close]="true" cdkFocusInitial class="btn btn-danger rounded-pill" (click)="actionBtn === 'Update' ? updateProduct() : onAddProduct()">{{actionBtn}}</button>
+            </mat-dialog-actions>
         </form>
     </div>
 </div>

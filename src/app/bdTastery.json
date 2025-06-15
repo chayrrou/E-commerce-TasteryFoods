@@ -1,0 +1,395 @@
+{
+  "foods": [
+    {
+      "id": "1",
+      "image": "https://media.istockphoto.com/id/181175167/photo/pizza.jpg?s=612x612&w=0&k=20&c=OyXOr0gffQOpa-Dn94I_DOsOcEVWTmbl9kR_M25o1v4=",
+      "name": "Margueritta",
+      "type": "Pizza",
+      "ingredients": "Tomate, Mozzarella, Basilic and Huile d'olive",
+      "price": "15"
+    },
+    {
+      "id": "2",
+      "type": "Pizza",
+      "name": "4 Saisons",
+      "ingredients": "poivron, coeurs d'artichauts ,jambon , mozzarella , tomates , champignons , d'olives noires",
+      "image": "https://media.istockphoto.com/id/675077466/fr/photo/pizza-quattro-stagioni-au-jambon-et-artichauts.jpg?b=1&s=612x612&w=0&k=20&c=_6BYGEnE1cqWG0t-yoa4XGOSBTOuLhBv5Fzewt4_ws8=",
+      "price": 15,
+      "disponible": true
+    },
+    {
+      "id": "3",
+      "type": "Pizza",
+      "name": "4 Fromages",
+      "ingredients": " tomates spécial pizza, cheddar, comté, gorgonzola, mozzarella ,basilic",
+      "image": "https://media.istockphoto.com/id/1308355753/fr/photo/pizza-quatre-fromages-ou-pizza-quattro-formaggi-garnie-de-sauce-tomate-mozzarella-gorgonzola.jpg?b=1&s=612x612&w=0&k=20&c=uwU9SKSKySlCW3_AwYftEmNfe2X6YHAsguiSZ4Qbp-0=",
+      "price": "7",
+      "disponible": true
+    },
+    {
+      "id": "4",
+      "image": "https://media.istockphoto.com/id/155388738/fr/photo/crevettes-grill%C3%A9es-et-poivron-grill%C3%A9-pizza.jpg?b=1&s=612x612&w=0&k=20&c=8mhPZA7x76fe9-zVBqB_Aq4HKFmXgzqiGf0C0EQE2vg=",
+      "name": " Pizza fruits de mers",
+      "type": "Pizza",
+      "ingredients": " moules décortiquées , calamars , crevettes roses , huile d'olive, poivre",
+      "price": "15"
+    },
+    {
+      "id": "5",
+      "type": "Pizza",
+      "name": "Sicilienne",
+      "ingredients": "Tomate, Mozzarella, Filets d’anchois à l’huile and Huile d'olive",
+      "image": "https://images.pexels.com/photos/315755/pexels-photo-315755.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 13,
+      "disponible": true
+    },
+    {
+      "id": "6",
+      "type": "Pasta",
+      "name": "Carbonara",
+      "ingredients": " pâtes ,oeufs ,guanciale  , parmesan ,poivre",
+      "image": "https://images.pexels.com/photos/4518838/pexels-photo-4518838.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 25,
+      "disponible": false
+    },
+    {
+      "id": "7",
+      "type": "Pasta",
+      "name": "Lasagne",
+      "ingredients": "Tomate, Viande haché, oinion and Huile d'olive",
+      "image": "https://images.pexels.com/photos/6046493/pexels-photo-6046493.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 15,
+      "disponible": true
+    },
+    {
+      "id": "8",
+      "type": "Pasta",
+      "name": "Pasta fruit de mer",
+      "ingredients": "Tomate, Poulpes, Crevettes , Huile d'olive, Moules",
+      "image": "https://media.istockphoto.com/id/503756968/fr/photo/spaghetti-con-frutti-di-mare-tipical-cuisine-italienne.jpg?b=1&s=612x612&w=0&k=20&c=wh_0t8TkJPbt6pCfL3MvJ_-kdYlvofNRpJLoZnWek9g=",
+      "price": "7",
+      "disponible": true
+    },
+    {
+      "id": "9",
+      "type": "Pasta",
+      "name": "Bolonaise",
+      "ingredients": "Tomate, Viande haché, oinion , Huile d'olive and parmezane",
+      "image": "https://media.istockphoto.com/id/527439685/fr/photo/spaghetti-%C3%A0-la-bolognaise.jpg?b=1&s=612x612&w=0&k=20&c=SeI4La7OQKufttypPpCcOgEhfx5NF59M2fFjq2c6UYs=",
+      "price": 10,
+      "disponible": false
+    },
+    {
+      "id": "10",
+      "type": "Chicken",
+      "name": " Chiken fries",
+      "ingredients": "Tomate, Mozzarella, Basilic and Huile d'olive",
+      "image": "https://media.istockphoto.com/id/488439655/fr/photo/poulet-stripsy.jpg?b=1&s=612x612&w=0&k=20&c=o3LGXIsOfP3aYhiZFGw4I1VQzib1bViKWTUsRJ946Uw=",
+      "price": 25,
+      "disponible": false
+    },
+    {
+      "id": "11",
+      "type": "Chicken",
+      "name": "Chicken wings",
+      "ingredients": "chicken, crumbs, salt, pepper",
+      "image": "https://images.pexels.com/photos/2338407/pexels-photo-2338407.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 15,
+      "disponible": true
+    },
+    {
+      "id": "12",
+      "type": "Chicken",
+      "name": "Steak",
+      "ingredients": "steak, salt, pepper, vegetables",
+      "image": "https://images.pexels.com/photos/361184/asparagus-steak-veal-steak-veal-361184.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": "7",
+      "disponible": true
+    },
+    {
+      "id": "13",
+      "type": "Chicken",
+      "name": "Cordon bleu",
+      "ingredients": "chicken, Jambon, Emmental cheese and Chapelure",
+      "image": "https://media.istockphoto.com/id/614982444/fr/photo/cordon-bleu-on-a-plate.jpg?b=1&s=612x612&w=0&k=20&c=mxt16Y7XaFoA-4PKsUXgf6wSfiz1F5nOGBOB0wc8YQk=",
+      "price": 10,
+      "disponible": false
+    },
+    {
+      "id": "14",
+      "type": "Humberger",
+      "name": "Turkey burger",
+      "ingredients": "Oignons ,Tomates ,Coriandre fraîche ,Cheddar en tranches ,Viande  ,Tabasco sauce",
+      "image": "https://images.pexels.com/photos/1633572/pexels-photo-1633572.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": 25,
+      "disponible": false
+    },
+    {
+      "id": "15",
+      "type": "Humberger",
+      "name": "Salmon burger",
+      "ingredients": "Oignons ,Tomates ,Coriandre fraîche ,Cheddar en tranches ,salmon  ,Tabasco sauce",
+      "image": "https://media.istockphoto.com/id/479335470/fr/photo/hamburger-maison-du-saumon-bio.jpg?b=1&s=612x612&w=0&k=20&c=h2PbhX3aEUUEH-bsMRPZKwlozyUDQTs3pnvHruRIKrk=",
+      "price": 15,
+      "disponible": true
+    },
+    {
+      "id": "16",
+      "type": "Humberger",
+      "name": "Beef burger",
+      "ingredients": "Oignons ,Tomates ,Coriandre fraîche ,Cheddar en tranches ,Viande de boeuf ,Tabasco sauce",
+      "image": "https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "price": "7",
+      "disponible": true
+    },
+    {
+      "id": "17",
+      "type": "Humberger",
+      "name": "Chicken burger",
+      "ingredients": "Oignons ,Tomates ,Coriandre fraîche ,Cheddar en tranches ,chicken  ,Tabasco sauce",
+      "image": "https://media.istockphoto.com/id/1203580318/fr/photo/vegan-meatless-plant-based-protein-chicken-strip-burger-on-a-whole-wheat-bun-with-lettuce.jpg?b=1&s=612x612&w=0&k=20&c=C1-IPgVNN0br33h_P4ulJKnAIf7zpTPN0RJldDcjRYU=",
+      "price": 10,
+      "disponible": false
+    },
+    {
+      "id": "18",
+      "type": "Salade",
+      "name": "salade césare",
+      "ingredients": "Tomate, laitue, pain de mie ,oinion and Huile d'olive",
+      "image": "https://media.istockphoto.com/id/1211166166/fr/photo/salade-c%C3%A9sar-au-poulet-grill%C3%A9-et-cro%C3%BBtons-de-pain.jpg?b=1&s=612x612&w=0&k=20&c=exN6S8QdpaQBIEl9MRJO3vRKrpcxvrRnveFVBsql95E=",
+      "price": 25,
+      "disponible": false
+    },
+    {
+      "id": "19",
+      "type": "Salade",
+      "name": "Pasta salade",
+      "ingredients": "Tomate, laitue, pate,olive and Huile d'olive",
+      "image": "https://media.istockphoto.com/id/1189709277/fr/photo/penne-de-p%C3%A2tes-avec-tomate-r%C3%B4tie-sauce-fromage-mozzarella-fond-de-pierre-grise-vue-du-haut.jpg?b=1&s=612x612&w=0&k=20&c=mkRIqDAyIq6rUjAJL1-H08PpxNzYqGNw6aRLNyL0yWA=",
+      "price": 150,
+      "disponible": true
+    },
+    {
+      "id": "20",
+      "type": "Salade",
+      "name": "Salade comtoise",
+      "ingredients": "salade ,oeufs durs ,lardons fumés, dés de comté, tomates, pommes de terre",
+      "image": "https://media.istockphoto.com/id/1422809191/fr/photo/salade-comtoise.jpg?b=1&s=612x612&w=0&k=20&c=dAvl30jXhGFq87KxpLvNrCQh4GieSc7vNoqMyvF2HLI=",
+      "price": "70",
+      "disponible": true
+    },
+    {
+      "id": "21",
+      "type": "Salade",
+      "name": "Salade grecque",
+      "ingredients": "Tomate, poivron, oinion, fetta cheese,olive, Huile d'olive",
+      "image": "https://media.istockphoto.com/id/1161711740/fr/photo/salade-grecque-aux-l%C3%A9gumes-frais-fromage-feta-et-olives-kalamata-nourriture-saine-vue-du-haut.jpg?b=1&s=612x612&w=0&k=20&c=585vlfk8P9pKYLai66YmX8EzqXrLgMRN7XpRTsLGFco=",
+      "price": 50,
+      "disponible": false
+    },
+    {
+      "id": "22",
+      "type": "Salade",
+      "name": "Salade caprese",
+      "ingredients": "Tomate, Mozzarellaand Huile d'olive",
+      "image": "https://media.istockphoto.com/id/1134723662/fr/photo/salade-de-caprese-avec-tomates-m%C3%BBres-et-fromage-mozzarella-feuilles-de-basilic-frais-sur-fond.jpg?b=1&s=612x612&w=0&k=20&c=KOeHIpTHTywtcB5UVMYw9PYkVk3zOzD1B5NSXcwg1Hs=",
+      "price": 25,
+      "disponible": false
+    },
+    {
+      "id": "23",
+      "type": "Soupe",
+      "name": "Soupe de legumes",
+      "ingredients": "Tomate, oinion, courgette , pomme de terre,carrote",
+      "image": "https://media.istockphoto.com/id/1179935433/fr/photo/soupe-de-l%C3%A9gumes-de-saison-avec-pommes-de-terre-carottes-oignons-ail-haricots-blancs-ma%C3%AFs.jpg?b=1&s=612x612&w=0&k=20&c=FrKp77el9LbuoQQHb0x9633clCupSIwEJzUpzbOf_rs=",
+      "price": 250,
+      "disponible": false
+    },
+    {
+      "id": "24",
+      "type": "Soupe",
+      "name": "Soupe au pistou",
+      "ingredients": "Tomate, oinion, courgette , pomme de terre,carrote, basilic , pate",
+      "image": "https://media.istockphoto.com/id/518912939/fr/photo/soupe-au-pistou.jpg?b=1&s=612x612&w=0&k=20&c=MdAQJxbQ1ov54Gro8kuRlZw6V3QWrfRkD18w565G1kA=",
+      "price": 150,
+      "disponible": true
+    },
+    {
+      "id": "25",
+      "image": "https://media.istockphoto.com/id/982603820/fr/photo/soupe-de-poisson-%C3%A0-la-fran%C3%A7aise.jpg?b=1&s=612x612&w=0&k=20&c=8k5WMe7Zc0z6D2LF7PHekdorRh1MA70dU8Yz3e7mQCg=",
+      "name": "soupe de poisson",
+      "type": "Soupe",
+      "ingredients": "Tomate, Poisson, oinion, Huile d'olive",
+      "price": "120"
+    },
+    {
+      "id": "26",
+      "name": "Salade Fruits",
+      "type": "Salade",
+      "ingredients": "Frais, Bananas, Anans, Apple",
+      "price": "20",
+      "image": "assets/images/saladeFruit.jpg"
+    }
+  ],
+  "categories": [
+    {
+      "id": "2",
+      "name": "Pizza"
+    },
+    {
+      "id": "3",
+      "name": "Pasta"
+    },
+    {
+      "id": "4",
+      "name": "Salade"
+    },
+    {
+      "id": "5",
+      "name": "Dessert"
+    },
+    {
+      "id": "6",
+      "name": "Drink"
+    },
+    {
+      "id": "7",
+      "name": "Vegan"
+    },
+    {
+      "id": "8",
+      "name": "Soupe"
+    }
+  ],
+  "contacts": [
+    {
+      "id": "1",
+      "firstName": "mariem",
+      "lastName": "chayrrou",
+      "email": "chayrrou.mariem@gmail.com",
+      "help": "i have a problem in may acount help me :)"
+    },
+    {
+      "id": "2",
+      "firstName": "sarra",
+      "lastName": "alaimi",
+      "email": "saraalaimi2@gmail.com",
+      "help": "hi:)"
+    },
+    {
+      "firstName": "Chayma",
+      "lastName": "Chayrrou",
+      "email": "chayrrou.chayma@gmail.com",
+      "help": "arigatoo :)",
+      "id": "5"
+    },
+    {
+      "firstName": "Sarra",
+      "lastName": "Alaimi",
+      "email": "saraalaimi2@gmail.com",
+      "help": "hey!",
+      "id": "6"
+    },
+    {
+      "firstName": "Mariem",
+      "lastName": "Chayrrou",
+      "email": "chayrrou.mariem@gmail.com",
+      "help": "Hi guys, i like this website :)",
+      "id": "7"
+    },
+    {
+      "firstName": "Yassine",
+      "lastName": "Chayrrou",
+      "email": "yassne.vhau@gmail.com",
+      "help": "Hey",
+      "id": "8"
+    },
+    {
+      "firstName": "Mariem",
+      "lastName": "Chayrrou",
+      "email": "mariem.chayrrou@gmail.com",
+      "help": "Hiiii",
+      "id": "12"
+    }
+  ],
+  "users": [
+    {
+      "name": "admin",
+      "email": "admin@gmail.com",
+      "password": "test",
+      "role": "Admin",
+      "image": "assets/uploads/onepiece.jpg",
+      "id": "1"
+    },
+    {
+      "email": "tabouch@gmail.com",
+      "password": "tab",
+      "name": "Mariem",
+      "role": "Client",
+      "id": "3"
+    },
+    {
+      "email": "yas@yahoo.com",
+      "password": "yas",
+      "name": "Yassine",
+      "role": "Client",
+      "id": "4"
+    },
+    {
+      "email": "Chayrrou@gmail.com",
+      "password": "test",
+      "name": "Mariem",
+      "role": "Client",
+      "id": "5"
+    },
+    {
+      "email": "Tchahi@admin",
+      "password": "yami",
+      "name": "Tchahi",
+      "role": "Client",
+      "id": "6"
+    }
+  ],
+  "comments": [
+    {
+      "id": "1",
+      "foodId": 1,
+      "userName": "Marie",
+      "comment": "La pizza Margueritta est délicieuse !",
+      "rating": 5,
+      "date": "2025-06-03"
+    },
+    {
+      "id": "2",
+      "foodId": 2,
+      "userName": "Luc",
+      "comment": "J'adore les 4 saisons, très équilibrée.",
+      "rating": 4,
+      "date": "2025-06-02"
+    },
+    {
+      "id": "3",
+      "foodId": 1,
+      "userName": "Sophie",
+      "comment": "Un peu trop salée à mon goût.",
+      "rating": 3,
+      "date": "2025-06-01"
+    },
+    {
+      "id": "0",
+      "foodId": 4,
+      "userName": "Anonymous",
+      "comment": "The seafood pizza has a wonderful blend of fresh flavors, but I found the seafood a bit sparse. Overall, a tasty choice for seafood lovers!",
+      "rating": 4,
+      "date": "2025-06-03T12:24:57.033Z"
+    },
+    {
+      "id": "0",
+      "foodId": 1,
+      "userName": "Anonymous",
+      "comment": "hello",
+      "rating": 3,
+      "date": "2025-06-03T13:08:39.172Z"
+    }
+  ]
+}

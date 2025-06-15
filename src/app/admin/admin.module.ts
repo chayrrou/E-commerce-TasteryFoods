@@ -24,6 +24,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SettingComponent } from './setting/setting.component';
 import { UsersComponent } from './users/users.component';
 import { FooterDashboardComponent } from './footer-dashboard/footer-dashboard.component';
+import { CategoryMealsComponent } from './category-meals/category-meals.component';
+import { AddCategorieComponent } from './add-categorie/add-categorie.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -34,7 +37,11 @@ import { FooterDashboardComponent } from './footer-dashboard/footer-dashboard.co
     CardComponent,
     SettingComponent,
     UsersComponent,
-    FooterDashboardComponent
+    FooterDashboardComponent,
+    CategoryMealsComponent,
+    AddCategorieComponent,
+    ContactComponent,
+  
   ],
   imports: [
     CommonModule,
@@ -55,6 +62,6 @@ import { FooterDashboardComponent } from './footer-dashboard/footer-dashboard.co
     MatSelectModule,
     ReactiveFormsModule,
     FormsModule
-  ]
+]
 })
 export class AdminModule { }

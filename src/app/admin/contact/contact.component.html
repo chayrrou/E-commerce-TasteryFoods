@@ -1,0 +1,68 @@
+<nav class="navbar justify-content-end" style="background-color:tomato;height: 64px;">
+  <div class="mx-5" style="font-size: 20px;">
+    <i class="bi bi-person-circle"></i>
+  </div>
+</nav>
+<!-- contact-requests.component.html -->
+<div class="contact-requests-container">
+  <div class="header-section">
+    <h2>Contact Requests</h2>
+    <div class="controls">
+      <mat-form-field appearance="outline" class="search-field">
+        <mat-label>Filter requests</mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search...">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+      <span class="total-count">
+        <mat-icon>inbox</mat-icon>
+        {{filteredRequests.length}} requests
+      </span>
+    </div>
+  </div>
+
+    <div class="requests-grid">
+        <mat-card *ngFor="let request of paginatedRequests" class="request-card">
+            <div class="card-header">
+            <div class="user-avatar">{{request.firstName.charAt(0)}}{{request.lastName.charAt(0)}}</div>
+            <div class="user-info">
+            <h3>{{request.firstName}} {{request.lastName}}</h3>
+            <a href="mailto:{{request.email}}" class="email">{{request.email}}</a>
+            </div>
+        </div>
+
+        <div class="card-body">
+            <div class="request-meta">
+            <span class="request-type">{{request.help}}</span>
+            </div>
+        </div>
+
+        <div class="card-actions">
+            <!-- <button mat-icon-button color="primary" matTooltip="View details" (click)="viewRequest(request)">
+                <mat-icon>visibility</mat-icon>
+            </button> -->
+
+            <a mat-icon-button color="primary" [href]="'mailto:' + request.email" matTooltip="Reply via Email">
+                <mat-icon>email</mat-icon>
+            </a>
+
+            <!-- <button mat-icon-button color="accent"
+                    matTooltip="{{request.isRead ? 'Mark as unread' : 'Mark as read'}}"
+                    (click)="toggleRead(request)">
+                <mat-icon>{{request.isRead ? 'mark_email_unread' : 'mark_email_read'}}</mat-icon>
+            </button> -->
+
+            <button mat-icon-button color="warn" matTooltip="Delete request" (click)="deleteRequest(request.id)">
+                <mat-icon>delete</mat-icon>
+            </button>
+            </div>
+
+        </mat-card>
+    </div>
+
+  <mat-paginator [length]="filteredRequests.length"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="[5, 10, 20]"
+                (page)="onPageChange($event)"
+                class="requests-paginator">
+  </mat-paginator>
+</div>

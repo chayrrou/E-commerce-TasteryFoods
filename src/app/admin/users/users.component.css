@@ -1,18 +1,153 @@
-h1{
-    font-family: 'Nunito';
-    font-size: 30px;
-    width: 21%;
-    padding-left: 15px;
-    border: 5px solid red;
-    border-top: 0px;
-    border-bottom: 0px;
-    border-right: 0px;
+/* General Styles */
+.container {
+  padding: 20px;
 }
+
+h1 {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: tomato;
+  border-radius: 2px;
+}
+
+/* Table Styles */
+.table-responsive {
+  overflow-x: auto;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
 table {
-    width: 100%;
+  width: 100%;
+}
+
+.mat-header-cell {
+  font-weight: 700;
+  color: #333;
+  background-color: #f8f9fa;
+}
+
+.mat-cell {
+  padding: 12px 16px;
+  vertical-align: middle;
+}
+
+/* Avatar */
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Password Display */
+.password-display {
+  letter-spacing: 2px;
+  font-family: monospace;
+}
+
+/* Role Badges */
+.role-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+.role-admin {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.role-client {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.role-designer {
+  background-color: #fff8e1;
+  color: #ffa000;
+}
+
+/* Role Select */
+.role-select {
+  display: inline-block;
+  width: 120px;
+}
+
+.role-select .mat-form-field-wrapper {
+  padding-bottom: 0;
+}
+
+/* Actions */
+.mat-icon-button {
+  margin: 0 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
   }
   
-  .mat-mdc-form-field {
-    font-size: 14px;
-    width: 100%;
+  .container {
+    padding: 10px;
   }
+  
+  .m-md-5 {
+    margin: 1rem !important;
+  }
+  
+  .role-select {
+    width: 100px;
+  }
+}
+
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.3rem;
+    width: auto !important;
+    border: none !important;
+    padding-left: 0 !important;
+  }
+  
+  h1::after {
+    width: 60px;
+  }
+  
+  .displayed-columns {
+    flex-wrap: wrap;
+  }
+  
+  .mat-cell, .mat-header-cell {
+    padding: 8px 4px;
+    font-size: 0.8rem;
+  }
+  
+  .role-select {
+    width: 80px;
+  }
+}

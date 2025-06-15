@@ -1,20 +1,57 @@
 <!-- first step creation header -->
-<header >
-    <mat-toolbar >
-        <span  class="logo">
-            <img src="../../../assets/logo/chef4.png" alt="chef">
-            <span class="nameLogo" class="text-danger">Tastery</span>
+<header>
+    <mat-toolbar class="toolbar">
+        <span class="logo">
+            <img src="../../../assets/logo/chef4.png" alt="chef" class="logo-img">
+            <span class="nameLogo text-danger">Tastery</span>
         </span>   
         <span class="spacer"></span>
-            <a mat-button  routerLink="/home"><mat-icon>home</mat-icon></a>
+        <div class="desktop-links">
+            <a mat-button routerLink="/home"><mat-icon>home</mat-icon></a>
             <a mat-button routerLink="/menu">Menu</a>
             <a mat-button routerLink="/aboutUs">About us</a>
             <a mat-button routerLink="/contact">Contact</a>
-            <a mat-button routerLink="/cartItem">
-                <i style="font-size:25px;" class="bi bi-basket"></i>
-                <div style="font-size:10px;" class="badge text-bg-primary rounded-pill translate-middle">{{badge}}</div>
+            <a mat-button routerLink="/cartItem" class="cart-icon">
+                <i class="bi bi-basket"></i>
+                <div class="badge text-bg-primary rounded-pill translate-middle">{{badge}}</div>
             </a>
-            <button *ngIf="!isConnected" mat-raised-button color="warn" routerLink="/login">login</button>
-            <button *ngIf="isConnected" mat-raised-button color="warn" (click)="logout()">logout</button>
+            <button *ngIf="!isConnected" mat-raised-button color="warn" routerLink="/login" class="auth-btn">login</button>
+            <button *ngIf="isConnected" mat-raised-button color="warn" (click)="logout()" class="auth-btn">logout</button>
+        </div>
+        <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+            <mat-icon>menu</mat-icon>
+        </button>
     </mat-toolbar>
+
+    <!-- Menu mobile en bas de page -->
+    <div class="mobile-menu" [class.open]="isMenuOpen">
+        <a mat-button routerLink="/home" (click)="closeMenu()">
+            <mat-icon>home</mat-icon>
+            <span>Home</span>
+        </a>
+        <a mat-button routerLink="/menu" (click)="closeMenu()">
+            <mat-icon>restaurant_menu</mat-icon>
+            <span>Menu</span>
+        </a>
+        <a mat-button routerLink="/aboutUs" (click)="closeMenu()">
+            <mat-icon>info</mat-icon>
+            <span>About us</span>
+        </a>
+        <a mat-button routerLink="/contact" (click)="closeMenu()">
+            <mat-icon>contact_mail</mat-icon>
+            <span>Contact</span>
+        </a>
+        <a mat-button routerLink="/cartItem" (click)="closeMenu()">
+            <mat-icon>shopping_cart</mat-icon>
+            <span>Panier ({{badge}})</span>
+        </a>
+        <button *ngIf="!isConnected" mat-raised-button  routerLink="/login" (click)="closeMenu()" style="background-color: #f44336; color: white;">
+            <mat-icon>login</mat-icon>
+            <span style="color: white;">Login</span>
+        </button>
+        <button *ngIf="isConnected" mat-raised-button  (click)="logout(); closeMenu()" style="background-color: #f44336; color: white;">
+            <mat-icon>logout</mat-icon>
+            <span style="color: white;">Logout</span>
+        </button>
+    </div>
 </header>

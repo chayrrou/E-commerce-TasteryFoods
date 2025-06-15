@@ -1,36 +1,40 @@
-h1{
+h1 {
     font-size: 45px;
     font-weight: bold;
     font-family: 'Nunito';
     color: #ff5722;
 }
 
-.search{
+.search {
     justify-content: center;
     align-items: center;
-    display:flex;
+    display: flex;
     margin-top: 40px;
     width: 100%;
     flex-direction: column;
-    /* bottom: 20px; */
 }
+
 .form {
     display: flex;
+    width: 100%;
+    max-width: 26rem; /* Prevents the search bar from stretching too wide */
 }
-input{
+
+input {
     border-radius: 10rem 0 0 10rem;
     border: none;
     height: 2.9rem;
-    width: 20rem;
+    width: 100%; /* Takes full width of .form */
     color: gray;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     padding: 1.2rem;
     font-size: 1.2rem;
     font-family: 'Nunito';
     font-weight: light;
     outline: none;
 }
-.button{
+
+.button {
     height: 2.9rem;
     width: 6rem;
     font-size: 1rem;
@@ -38,6 +42,82 @@ input{
     border: none;
     outline: none;
 }
-.button:hover{
+
+.button:hover {
     background-color: #ff5722;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 36px; /* Slightly smaller on tablets/mobiles */
+    }
+
+    .form {
+        max-width: 90%; /* Allows better fit on small screens */
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 28px; /* Even smaller on phones */
+    }
+
+    input {
+        padding: 0.8rem; /* Reduce padding to save space */
+        font-size: 1rem;
+    }
+}
+
+
+/* Ajouts CSS (sans modifier les styles existants) */
+.categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+    max-width: 80%;
+}
+
+.category-badge {
+    padding: 0.5rem 1.2rem;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    font-family: 'Nunito';
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+}
+
+.category-badge:hover {
+    background-color: #ffebee;
+    transform: translateY(-2px);
+}
+
+.category-badge.active {
+    background-color: #ff5722;
+    color: white;
+    border-color: #ff5722;
+    font-weight: bold;
+}
+
+/* Responsive pour les catégories */
+@media (max-width: 768px) {
+    .categories {
+        max-width: 90%;
+        gap: 0.6rem;
+    }
+    
+    .category-badge {
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .categories {
+        max-width: 100%;
+    }
 }

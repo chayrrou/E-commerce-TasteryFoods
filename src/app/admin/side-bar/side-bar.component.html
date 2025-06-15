@@ -7,9 +7,11 @@
     <mat-sidenav #sidenav opened="true" mode="side" style="width: 100%">
         
             <mat-nav-list>
-                <a routerLink="product"  mat-list-item ><span>Product</span></a>
-                <a routerLink="setting" mat-list-item> <span>Account Setting</span></a>
+                <a routerLink="contact" mat-list-item> <span>Contact Setting</span></a>
+                <a routerLink="product"  mat-list-item ><span>Meals</span></a>
+                <a routerLink="categoryMeals" mat-list-item> <span>Category Meals</span></a>
                 <a routerLink="users" mat-list-item><span>Users</span></a>
+                <a routerLink="setting" mat-list-item> <span>Account Setting</span></a>
                 <div>
                     <a  mat-list-item (click)="logout()"><span><i class="bi bi-box-arrow-right"></i> Logout</span></a>
                 </div>

@@ -52,23 +52,60 @@ export class ProductComponent implements OnInit {
   }
 
   openForm() {
-    const dialogRef = this.dialog.open(CardComponent,{
-      width: "30%"
+  const dialogRef = this.dialog.open(CardComponent, {
+    width: "30%"
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      this.refreshFoods(); // ✅ recharger la liste sans reload
+    }
+  });
+}
+
+onEditProduct(row: any) {
+  const dialogRef = this.dialog.open(CardComponent, {
+    width: "30%",
+    data: row
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      this.refreshFoods(); // ✅ mise à jour sans reload
+    }
+  });
+}
+
+refreshFoods() {
+  this.foodService.getFoods().subscribe(value => {
+    this.lesFoods = value;
+    this.dataSource.data = this.lesFoods;
+  });
+}
+
+ onDeleteProduct(id: number): void {
+  const confirmDelete = confirm("Voulez-vous vraiment supprimer ce produit ?");
+
+  if (confirmDelete) {
+    this.foodService.deleteFoods(id).subscribe({
+      next: () => {
+        // Mise à jour locale sans appel au serveur supplémentaire
+        this.lesFoods = this.lesFoods.filter(food => food.id !== id);
+        this.dataSource.data = this.lesFoods;
+      },
+      error: (err) => {
+        console.error("Erreur lors de la suppression :", err);
+        alert("Échec de la suppression du produit.");
+      }
     });
   }
+}
 
-  onEditProduct(row : any){
-      this.dialog.open(CardComponent, {
-        width: "30%",
-        data : row
-      })    
-  }
-  onDeleteProduct = (id : number)=>{
-    this.foodService.deleteFoods(id).subscribe(value => {
-      this.lesFoods = this.lesFoods.filter(elt =>elt.id !== id)
-      this.dataSource.data = this.lesFoods
-    })
-  }
+truncateText(text: string, limit: number = 20): string {
+  return text.length > limit ? text.substring(0, limit) + '...' : text;
+}
+
+
  
 
 }

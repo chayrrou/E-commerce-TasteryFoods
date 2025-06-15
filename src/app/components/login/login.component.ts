@@ -65,14 +65,21 @@ export class LoginComponent implements OnInit {
     const [user] = this.lesUsers.filter((user) => user.email === email && user.password === password) // returns array of filtered users
     if (user) {
       this.authentificationService.user = user; // better not store all user because password can be stolen.
-      if (user.role === "admin") {
-        this.router.navigate(['admin'])
+      localStorage.setItem('userId', String(user.id)); 
+      console.log("user",user)
+      if (user.role === "Admin") {
+        this.router.navigate(['/admin'])
+        console.log("logged success")
       } else {
         this.router.navigate(['home'])
       }
     }
     
     this.loginForm.reset();
+  }
+
+  loginWithGoogle() {
+    console.log('Login with Google clicked');
   }
 
 }

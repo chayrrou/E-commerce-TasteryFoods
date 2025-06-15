@@ -21,7 +21,11 @@ export class AuthentificationService {
   updateUser(id:number,u:User){
     return this.http.put<User>(URL+"/"+id ,u)
   }
+
+  getUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${URL}/${id}`);
+  }
   
-  role : string = "client";
+  role : string = "Client";
   user: User | undefined;
 }

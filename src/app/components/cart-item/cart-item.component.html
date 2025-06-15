@@ -1,30 +1,171 @@
 <app-header></app-header>
-        <div class="container">
-            <ul>
-                <li *ngFor="let item of cartList" >
-                    <div>
-                        <img [src]="item.image">
-                    </div>
-                    <div>
-                        <a style="font-size:20px ;" >
-                           {{item.name}}
-                        </a>
-                    </div>
-                    <div style="font-size:20px ;">{{item.price}} TND</div>
-                    <button class="btn btn-danger rounded-pill" (click)="removeCartItem(item.id)">
-                        Remove
-                    </button>
-                
-                </li>
-            </ul>
-        
-            <div class="checkout">
-                <div class="price">
-                    <div class="total-price-dinar">{{totalPrice}}TND</div>
-                    <div class="total-price-dollar">{{totalPrice | dollar}}</div>
-                    <div class="total-price-euro">{{totalPrice | euro}}</div>
+<div class="container">
+    <h2 class="cart-title">Your Shopping Cart</h2>
+    
+    <div *ngIf="cartList.length === 0" class="empty-cart-container">
+    <div class="empty-cart-content">
+        <div class="empty-cart-animation">
+            <div class="cart-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#d10a11" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="9" cy="21" r="1"></circle>
+                    <circle cx="20" cy="21" r="1"></circle>
+                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                </svg>
+                <div class="wobbling-item">🍗</div>
+            </div>
+        </div>
+        <h3 class="empty-cart-title">Ooops! Your cart feels lonely</h3>
+        <p class="empty-cart-message">Looks like you haven't added any delicious items yet</p>
+        <button class="empty-cart-btn" routerLink="/menu">
+            <span>Explore Our Menu</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+
+    <ul *ngIf="cartList.length > 0">
+        <li *ngFor="let item of cartList">
+            <div class="item-image">
+                <img [src]="item.image" [alt]="item.name">
+            </div>
+            <div class="item-details">
+                <h3 class="item-name">{{item.name}}</h3>
+                <div class="item-quantity">
+                    <button class="btn btn-quantity" (click)="decreaseQuantity(item.id)">-</button>
+                        <span class="quantity">{{ item.quantity }}</span>
+                    <button class="btn btn-quantity" (click)="increaseQuantity(item.id)">+</button>
                 </div>
             </div>
-        
+
+            <div class="item-price">{{ (item.price * item.quantity).toFixed(2) }} TND</div>
+
+            <button class="btn btn-remove" (click)="removeCartItem(item.id)">
+                <!-- <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 7V18C6 19.1046 6.89543 20 8 20H16C17.1046 20 18 19.1046 18 18V7M4 7H20M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#999" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg> -->
+
+                 <span class="trash-icon">🗑️</span> <!-- Emoji de secours -->
+                 <span class="screen-reader-text">Supprimer</span>
+            </button>
+        </li>
+    </ul>
+
+    <div class="checkout" *ngIf="cartList.length > 0">
+        <div class="price-summary">
+            <h3>Order Summary</h3>
+            <div class="price-row">
+                <span class="price-label">Subtotal:</span>
+                <span class="price-value">{{totalPrice}} TND</span>
+            </div>
+            <div class="price-row">
+                <span class="price-label">Delivery Fee:</span>
+                <span class="price-value">5.00 TND</span>
+            </div>
+            <div class="price-row total">
+                <span class="price-label">Total:</span>
+                <span class="price-value">{{totalPrice + 5}} TND</span>
+            </div>
+            
+            <div class="currency-conversion">
+    <h4 class="conversion-title">Currency Conversion</h4>
+    <div class="conversion-grid">
+            <div class="currency-card">
+                        <div class="currency-flag">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="30">
+                    <path fill="#bd3d44" d="M0 0h60v30H0z"/>
+                    <path fill="#fff" d="M0 0h60v2H0zm0 4h60v2H0zm0 4h60v2H0zm0 4h60v2H0zm0 4h60v2H0zm0 4h60v2H0zm0 4h60v2H0z"/>
+                    <path fill="#192f5d" d="M0 0h30v16H0z"/>
+                </svg>
+            </div>
+            <span class="currency-code">USD</span>
+            <span class="currency-value">{{totalPrice | dollar}}</span>
+            <span class="currency-rate">1 TND = 0.34 USD</span>
         </div>
-        <!-- <app-footer></app-footer> -->
+        <div class="currency-card">
+            <div class="currency-flag">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="40" height="30">
+                    <path fill="#005A9C" d="M0 0h20v30H0z"/> <!-- Bleu -->
+                    <path fill="#fff" d="M20 0h20v30H20z"/> <!-- Blanc -->
+                    <path fill="#EF4135" d="M40 0h20v30H40z"/> <!-- Rouge -->
+                </svg>
+            </div>
+            <span class="currency-code">EUR</span>
+            <span class="currency-value">{{totalPrice | euro}}</span>
+            <span class="currency-rate">1 TND = 0.31 EUR</span>
+        </div>
+    </div>
+</div>
+        </div>
+        
+        <button class="btn btn-checkout" (click)="proceedToCheckout()">
+            Proceed to Checkout
+        </button>
+    </div>
+</div>
+<!-- Ajoutez ceci juste avant la fermeture du div.container -->
+<div class="payment-modal" *ngIf="showPaymentModal">
+    <div class="payment-content">
+        <button class="close-btn" (click)="closePaymentModal()">&times;</button>
+        <h3>Select Payment Method</h3>
+        
+        <div class="payment-options">
+            <div class="payment-card" [class.selected]="selectedPayment === 'cash'" (click)="selectPayment('cash')">
+                <div class="payment-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#4CAF50" stroke-width="2">
+                        <rect x="2" y="6" width="20" height="12" rx="2"></rect>
+                        <circle cx="12" cy="12" r="2"></circle>
+                        <path d="M6 12h.01M18 12h.01"></path>
+                    </svg>
+                </div>
+                <span>Cash on Delivery</span>
+            </div>
+            
+            <div class="payment-card" [class.selected]="selectedPayment === 'card'" (click)="selectPayment('card')">
+                <div class="payment-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#2196F3" stroke-width="2">
+                        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                        <line x1="2" y1="10" x2="22" y2="10"></line>
+                        <line x1="8" y1="14" x2="10" y2="14"></line>
+                        <line x1="14" y1="14" x2="16" y2="14"></line>
+                    </svg>
+                </div>
+                <span>Credit/Debit Card</span>
+            </div>
+        </div>
+
+        <div *ngIf="selectedPayment === 'cash'" class="cash-fields">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" [(ngModel)]="email" placeholder="you@example.com" required>
+            </div>
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" [(ngModel)]="phone" placeholder="12345678" required>
+            </div>
+        </div>
+        
+        <div class="payment-details" *ngIf="selectedPayment === 'card'">
+            <div class="form-group">
+                <label>Card Number</label>
+                <input type="text" placeholder="1234 5678 9012 3456" class="card-input">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Expiry Date</label>
+                    <input type="text" placeholder="MM/YY">
+                </div>
+                <div class="form-group">
+                    <label>CVV</label>
+                    <input type="text" placeholder="123">
+                </div>
+            </div>
+        </div>
+        
+        <button class="confirm-btn" (click)="confirmPayment()" [disabled]="!selectedPayment">
+            Confirm Payment - {{totalPrice + 5}} TND
+        </button>
+    </div>
+</div>
+<!-- <app-footer></app-footer> -->

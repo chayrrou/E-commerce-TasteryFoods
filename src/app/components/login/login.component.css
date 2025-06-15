@@ -9,31 +9,48 @@ h3{
     border-bottom: 0px;
     border-right: 0px;
 }
-.box{
-    width: 40%;
-    height: 410px;
+.box {
+    width: 45%;
+    min-height: 410px;
     display: flex;
-    background-color:  #dc3545;
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
     color: white;
-    border-radius: 40px;
-}
-.login-left{
-    /* flex-basis: 55%; */
-    padding: 10px 50px;
+    border-radius: 2rem;
+    box-shadow: 0 10px 30px rgba(220, 53, 69, 0.2);
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.login-form-txt{
-    width: 100%;
-    height: 40px;
-    color: #000;
-    border: 1px solid #bcbcbc;
-    border-radius: 50px;
-    outline:none;
-    margin-bottom: 20px;
-    padding: 15px;
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(220, 53, 69, 0.3);
 }
-.login-form-txt::placeholder{
-    color: #aaa;
+.login-left {
+    padding: 2rem 3rem;
+    width: 100%;
+}
+
+.login-form-txt {
+    width: 100%;
+    height: 45px;
+    color: #333;
+    border: 2px solid #e9ecef;
+    border-radius: 50px;
+    outline: none;
+    margin-bottom: 1.5rem;
+    padding: 0 1.5rem;
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.login-form-txt:focus {
+    border-color: #ffc107;
+    box-shadow: 0 0 0 0.2rem rgba(255, 193, 7, 0.25);
+}
+
+.login-form-txt::placeholder {
+    color: #adb5bd;
+    font-family: 'Nunito', sans-serif;
 }
 label{
     font-family: 'Nunito';
@@ -59,3 +76,57 @@ input.ng-invalid{ border-left: 3px solid #dc3545;}
     left: 16px;
 
 }
+
+
+/* Media Queries pour le responsive */
+@media (max-width: 992px) {
+    .box {
+        width: 70%;
+    }
+}
+
+@media (max-width: 768px) {
+    h3 {
+        font-size: 1.7rem;
+        padding-left: 1rem;
+    }
+    
+    .box {
+        width: 85%;
+        border-radius: 1.5rem;
+    }
+    
+    .login-left {
+        padding: 1.5rem;
+    }
+    
+    .login-form-txt {
+        height: 42px;
+    }
+}
+
+@media (max-width: 576px) {
+    h3 {
+        font-size: 1.5rem;
+        margin: 1rem 0;
+    }
+    
+    .box {
+        width: 95%;
+        border-radius: 1rem;
+    }
+    
+    .form {
+        padding: 1.5rem;
+    }
+    
+    .login-form-txt {
+        height: 40px;
+        padding: 0 1rem;
+    }
+    
+    button {
+        width: 140px;
+    }
+}
+

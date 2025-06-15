@@ -1,37 +1,119 @@
 <app-header></app-header>
-<div class=" container p-5 ">
-    <div class="d-flex justify-content-around">
-        <div class="align-items-start">
-            <img src={{foodDetails?.image}} alt="pizza">
+<div class="container p-3 p-md-5 food-detail-container">
+    <div class="row g-4 align-items-center">
+        <!-- Image Column (centrée et responsive) -->
+        <div class="col-12 col-md-6 text-center">
+            <img src={{foodDetails?.image}} alt="{{foodDetails?.name}}" class="food-image shadow">
         </div>
-        <div class="details">
-            <div class="type badge text-bg-primary">
-                <span>{{foodDetails?.type}}</span>
+
+        <!-- Details Column -->
+        <div class="col-12 col-md-6">
+            <div class="food-details p-3 p-lg-4">
+                <!-- Badge Type -->
+                <div class="food-type-badge mb-3">
+                    <span class="badge bg-primary">{{foodDetails?.type}}</span>
+                </div>
+
+                <!-- Food Name -->
+                <h1 class="food-name mb-3">{{foodDetails?.name}}</h1>
+
+                <!-- Rating -->
+                <div class="food-rating mb-3">
+                    <div class="stars">
+                        <!-- <i class="bi bi-star-fill filled"></i>
+                        <i class="bi bi-star-fill filled"></i>
+                        <i class="bi bi-star-fill filled"></i>
+                        <i class="bi bi-star-fill filled"></i>
+                        <i class="bi bi-star"></i>
+                        <span class="rating-text ms-2">(4.0)</span> -->
+                        <ng-container *ngFor="let star of [1,2,3,4,5]">
+                            <i class="bi" [ngClass]="star <= maxRating ? 'bi-star-fill filled' : 'bi-star'"></i>
+                        </ng-container>
+                        <span class="rating-text ms-2">({{ maxRating || 'N/A' }})</span>
+                    </div>
+                </div>
+
+                <!-- Ingredients -->
+                <div class="food-ingredients mb-4">
+                    <h3 class="ingredients-title">Ingredients</h3>
+                    <p class="ingredients-list">{{foodDetails?.ingredients}}</p>
+                </div>
+
+                <!-- Price -->
+                <div class="food-price mb-4">
+                    <h3 class="price-title">Price</h3>
+                    <span class="price-value">{{foodDetails?.price}} TND</span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="food-actions d-flex flex-wrap gap-3">
+                    <button mat-raised-button color="warn" class="action-btn add-to-cart" 
+                            (click)="addCartItem()" [disabled]="isDisabled">
+                        <i class="bi bi-cart-plus me-2"></i>Add to Cart
+                    </button>
+                    <button mat-raised-button color="primary" class="action-btn back-btn" routerLink="/menu">
+                        <i class="bi bi-arrow-left me-2"></i>Back to Menu
+                    </button>
+                </div>
             </div>
-            <div>
-                <span class="text-danger name">
-                    {{foodDetails?.name}}
-                </span>
-            </div>
-            <div class="rates">
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star-fill"></i>
-                <i class="bi bi-star"></i>
-                <i class="bi bi-star"></i>
-            </div>
-            <div class="ingredient">
-                <p>{{foodDetails?.ingredients}}</p>
-            </div>
-            <div class="price">
-                <p>Price <span class="badge rounded-pill-2 text-bg-success">{{foodDetails?.price}} TND</span></p> 
-            </div>     
-            <div class="spacer">
-                <button mat-raised-button color="warn" (click)="addCartItem()" [disabled]="isDisabled">Add Card</button>
-                <button mat-raised-button color="primary"  routerLink="/menu"> Back</button>
-            </div>
-        </div> 
+        </div>
     </div>
+
+
+     <!-- Reviews Section -->
+   <div class="reviews-section mt-5">
+        <div class="reviews-header">
+            <h2><i class="bi bi-chat-square-quote"></i> Customer Reviews</h2>
+            <span class="reviews-count">{{comments.length}} reviews</span>
+        </div>
+
+        <!-- Add Review -->
+        <div class="add-review">
+            <h3>Share Your Experience</h3>
+            <form (ngSubmit)="submitReview()">
+            <div class="rating-input">
+                <span>Your Rating:</span>
+                <div class="stars">
+                <span *ngFor="let star of [1,2,3,4,5]; let i = index" 
+                        (click)="setReviewRating(i + 1)"
+                        [class.active]="reviewRating >= i + 1"
+                        style="cursor:pointer; user-select:none;">
+                    ★
+                </span>
+                </div>
+            </div>
+            <textarea [(ngModel)]="reviewComment" name="comment" placeholder="Write your review..." required></textarea>
+            <button type="submit" [disabled]="!reviewRating || !reviewComment">
+                Submit Review
+            </button>
+            </form>
+        </div>
+
+        <!-- Reviews List -->
+        <div class="reviews-list">
+            <div *ngIf="comments.length === 0" class="no-reviews">
+            <i class="bi bi-emoji-frown"></i>
+            <p>No reviews yet. Be the first to review!</p>
+            </div>
+
+            <div *ngFor="let review of comments" class="review-card">
+            <div class="review-header">
+                <div class="user-info">
+                <div class="avatar">{{review.userName}}</div>
+                <span class="username">{{review.userName}}</span>
+                </div>
+                <div class="review-rating">
+                    <span *ngFor="let star of [1,2,3,4,5]" 
+                            [class.filled]="star <= review.rating">
+                        ★
+                    </span>
+                </div>
+            </div>
+            <div class="review-date">{{review.date | date:'mediumDate'}}</div>
+            <p class="review-text">{{review.comment}}</p> <!-- note: 'comment' property -->
+            </div>
+        </div>
+</div>
+
 </div>
 <app-footer></app-footer>
